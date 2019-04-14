@@ -1,7 +1,7 @@
 from pmodel import pmodel
 from powernoise import powernoise
 from logistic import logistic
-from normalize import normalize
+import preprocess as pre
 import matplotlib.pyplot as plt
 
 
@@ -16,9 +16,9 @@ def main():
     S2 = powernoise(beta[1], n_samples)
     S3 = powernoise(beta[2], n_samples)
     S4 = logistic(rho, a0, n_samples)
-    S5 = normalize(S1, S4)
-    S6 = normalize(S2, S4)
-    S7 = normalize(S3, S4)
+    S5 = pre.standardize(S1, S4)
+    S6 = pre.standardize(S2, S4)
+    S7 = pre.standardize(S3, S4)
     S8 = pmodel(noValues=n_samples, p=p[0], slope=slope[0])
     S9 = pmodel(noValues=n_samples, p=p[1], slope=slope[1])
     S10 = pmodel(noValues=n_samples, p=p[2], slope=slope[2])
@@ -30,6 +30,7 @@ def main():
     plt.title('Logistic Map')
     plt.grid(True)
     plt.show()
+
 
 if __name__ == '__main__':
     main()
