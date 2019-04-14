@@ -84,16 +84,4 @@ def pmodel(**kwargs):
     y = y[0:noValues + 1]
     x = x[0:noValues + 1]
 
-    return x, y
-
-
-def main():
-    #np.random.seed(10)
-    x, y = pmodel(noValues=16, p=0.52, slope=-1.66)
-    print(x)
-    plt.figure(1)
-    plt.plot(x)
-    plt.show()
-
-if __name__ == '__main__':
-    main()
+    return x

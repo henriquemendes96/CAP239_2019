@@ -24,15 +24,3 @@ def powernoise(beta, N):
         x = ((x - min(x)) / (max(x) - min(x)) - 0.5) * 2
 
     return x
-
-
-def main():
-    n_samples = 2**12
-    beta = [0, 1, 2]
-    S1 = powernoise(beta[0], n_samples)
-    S2 = powernoise(beta[1], n_samples)
-    S3 = powernoise(beta[2], n_samples)
-
-
-if __name__ == '__main__':
-    main()
