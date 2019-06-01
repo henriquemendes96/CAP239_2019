@@ -27,7 +27,7 @@ def main():
     z = np.linspace(0, 1024, 1024)
 
     data_norm = waipy.normalize(data)
-    result = waipy.cwt(data_norm, 1, 1, 0.125, 2, 4 / 0.125, 0.72, 6, mother='Morlet', name='S8')
+    result = waipy.cwt(data_norm, 1, 1, 0.125, 2, 4 / 0.125, 0.72, 6, mother='h', name='S8')
     waipy.wavelet_plot('S8', z, data_norm, 0.03125, result)
 
 

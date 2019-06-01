@@ -26,7 +26,7 @@ def main():
     for i in range(0,10,1):
         names[:,i], values[:,i] = generateGalaxies()
 
-    # np.savetxt('galaxies.txt', zip(values), fmt='%5.10f')
+    np.savetxt('galaxies.txt', values, fmt='%5.10f')
 
     # Fazendo o ajuste em uma das amostras (primeira)
     sample = 0
